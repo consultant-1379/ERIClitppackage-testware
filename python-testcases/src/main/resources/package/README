@@ -1,0 +1,284 @@
+OBSOLETED TC
+============
+
+Story testset_install_uninstall_packages
+----------------------------------------
+test_08_pkg_name_altered
+    OBSOLETED, moved to ATs package/testset_story2093_6073/test_28
+    Description:  Check that LITP prevents update of an installed
+            package name.
+    git: 025357a2805d805f6d274a112afa038de15baf61
+    gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+Story 2093
+----------
+Story merged with story 6073
+git: ab1aa2384ccc6cffd3b23f6b0e1ca3a3a5e849ae
+
+Story 2093_6073
+---------------
+
+test_01_p_add_upgrade_item_under_node
+        MERGED with test_01 testset_story9532_9659
+        Description:
+            Verify that if an upgrade item is added under a node and there are
+            RHEL and/or 3pp update packages available, upgrade tasks will be
+            added to the plan for each package in the node.
+            Verify that after the plan is executed and the packages are
+            upgraded on the selected node.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+test_02_p_add_upgrade_item_under_deployment
+        OBSOLETE, as of story 9659 there is only one upgrade task per node
+        Description:
+            This test will verify that if an upgrade item is added under a
+            deployment and there are RHEL and_or 3pp update packages available,
+            tasks will be added to the plan for every node for each package in
+            each node Verify that after the plan is executed the packages are
+            upgraded.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+test_04_n_error_add_upgrade_model_item_incorrect_location
+        MOVED to AT:
+        ERIClitppackage/ats/package/testset_story2093_6073/
+        test_04_n_error_add_upgrade_model_item_incorrect_location.at
+
+        Description:
+            This test will verify that a validation error is returned
+            when the user attempts to add an upgrade model item under anything
+            apart from a node, cluster, or a deployment.
+
+        git: e699a2f90006b79a3c2d2eb7a204477f122bd818
+        gerrit link: https://gerrit.ericsson.se/#/c/996270/
+
+test_08_p_adding_or_updating_upgrade_item_same
+        MOVED to AT:
+        ERIClitppackage/ats/package/testset_story2093_6073/
+        test_08_p_adding_or_updating_upgrade_item_same.at
+
+        Description:
+            This test will verify that adding or updating an upgrade item under
+            a node or a deployment will have the same effect, given the same
+            set of available upgrades.
+
+        git: db062a4b85d524e9d3281791d0c8888d8f640109
+        gerrit link: https://gerrit.ericsson.se/#/c/1172365
+
+test_09_p_upgrade_items_applied_state_after_success
+        MERGED IN TEST_01
+        Description:
+            This test will verify that the upgrade items are in an Applied
+            state after the plan ran successfully.
+
+        git: 6a95245e44ea54843f8c4f7dca024c4bf4bad102
+        gerrit: https://gerrit.ericsson.se/#/c/982042/
+
+test_10_n_upgrade_items_initial_state_after_plan_failed
+        MERGED IN test_11
+        Description:
+            This test will verify that the upgrade items are in a Initial state
+            after the plan ran and failed.
+
+        git: 6a95245e44ea54843f8c4f7dca024c4bf4bad102
+         gerrit: https://gerrit.ericsson.se/#/c/982042/
+
+test_11_n_yum_returns_error_plan_fails
+    Merged with test_12 story 9659
+
+    Description:
+            This test will verify that if yum returns an error for a package
+            installation, the plan will fail.
+
+    git: 40a911c831194172109108be6dbefeb6e49952f8
+    gerrit: https://gerrit.ericsson.se/#/c/1312925
+
+test_12_p_a_user_can_view_help_for_the_litp_upgrade_command
+        MOVED to CLI
+        Description:
+            This test will verify that a user can view help for the litp
+            upgrade command.
+
+        git: e61a57d30f49761e9b4a4819799f85b2c4bc54c3
+        gerrit: https://gerrit.ericsson.se/#/c/1311947
+
+test_13_p_no_duplicates_item_under_deployment_and_node
+        MOVED to AT:
+        ERIClitppackage/ats/package/testset_story2093_6073/
+        test_13_p_no_duplicates_item_under_deployment_and_node.at
+
+        Description:
+            This test will verify that duplicate tasks are not created if an
+            upgrade item is added under both the deployment and a node.
+
+        git: db062a4b85d524e9d3281791d0c8888d8f640109
+        gerrit link: https://gerrit.ericsson.se/#/c/1172365
+
+test_14_n_add_upgrade_item_under_node_xml(self):
+        Description:
+            This test will verify that the user cannot add an upgrade item
+            under a node using xml.
+
+        git: db062a4b85d524e9d3281791d0c8888d8f640109
+        gerrit link: https://gerrit.ericsson.se/#/c/1172365
+
+test_15_n_hash_prop_populated_litp_upgrade_run(self):
+        Description:
+            This test will verify that the hash property gets populated every
+            time litp upgrade is run.
+
+        git: db062a4b85d524e9d3281791d0c8888d8f640109
+        gerrit link: https://gerrit.ericsson.se/#/c/1172365
+
+test_16_n_requires_reboot_prop_set_create_plan_run(self):
+        Description:
+            This test will verify that the requires_reboot property is set to
+            true when create_plan is run when a reboot is required in the
+            upgrade.
+
+        git: db062a4b85d524e9d3281791d0c8888d8f640109
+        gerrit link: https://gerrit.ericsson.se/#/c/1172365
+
+test_17_n_DoNothingPlanError_returned_no_tasks_to_upgrade:
+        MOVED to package ATs/testset_story2093_6073/test_17
+        Description:
+            This test will verify that DoNothingPlanError is returned if there
+            are no tasks to upgrade.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+test_18_n_add_a_node_and_upgrade_item_at_the_same_time
+        MOVED to package ATs/testset_story2093_6073/test_18
+        Description:
+            This test will verify that when a user attempts to add a node
+            and an upgrade item at the same time, the node is added but not
+            upgraded.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+test_20_p_only_selected_nodes_get_upgraded
+         MERGED in test_08
+        Description:
+            This test will verify that when a node is upgraded, other nodes
+            without an upgrade item are not upgraded.
+
+        git: 6a95245e44ea54843f8c4f7dca024c4bf4bad102
+        gerrit: https://gerrit.ericsson.se/#/c/982042/
+
+test_23_p_add_upgrade_item_under_cluster
+        OBSOLETE, as of story 9659 there is only one upgrade task per node
+        Description:
+            This test will verify that if an upgrade item is added under a
+            deployment and there are RHEL and_or 3pp update packages available,
+            tasks will be added to the plan for every node for each package in
+            each node Verify that after the plan is executed the packages are
+            upgraded.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+Story 9532_9659
+---------------
+
+test_02_n_nodes_not_inherited_not_updated(self):
+        OBSOLETE, was merged with test_01
+
+        Description:
+            This test will verify that nodes which are not linked to the
+            modeled repo are not updated.
+
+        git: 07188e93bbcb57472c7da82c2257c87b018a061a
+        gerrit: https://gerrit.ericsson.se/#/c/948909/
+
+test_06_p_upgrade_modeled_repos_on_inherited_nodes
+        OBSOLETE same as TC 1 now (was put to manual because of bug 11414 and
+        the kernel upgrade, now TC 1 includes the kernel upgrade again)
+
+        Description:
+            This test will verify that when there are updates in a litp
+            modeled repo, and an upgrade item is added under the node then
+            the managed node is updated when the user runs
+            create_plan/run_plan.
+
+        git: 0ce64a1a4fccee9cca2b8b152a95be898a5b035f
+        gerrit: https://gerrit.ericsson.se/#/c/957637/
+
+test_14_reboot_task_when_kernel_in_OS
+     OBSOLETED, moved to ATS package: testset_story9532_9659/test_14
+     Description:
+            Verify that when a new repository is deployed and there is a
+            kernel update from OS, then a reboot task will be created.
+
+        git: 025357a2805d805f6d274a112afa038de15baf61
+        gerrit: https://gerrit.ericsson.se/#/c/1561163/
+
+Story 9630
+----------
+
+test_01_p_extrlitprsyslog8_is_available
+        MOVED to miscCDB
+
+        Description:
+            To ensure that the rsyslog8 package is avaiable via a yum search
+            initiated on both the management server and the peer nodes.
+
+        git: 7ef7c24620320228a49139da2d8a2b1cea5b5812
+        gerrit: https://gerrit.ericsson.se/#/c/986888/
+        
+Story 10123
+-----------
+
+test_01_p_require_pkg_install_order_dflt_vrsn
+         merged into test_13 
+    Description:
+            To ensure packages are installed in the order specified by the
+            require property when no version or release property values are
+            specified.
+    git: ee5b3cc4625b8d4ae06550fd3a7fd6363efb102e
+    gerrit: https://gerrit.ericsson.se/#/c/1572388/
+
+test_02_p_require_pkg_install_order_latest_vrsn
+         merged into test_13 
+    Description:
+            To ensure packages are installed in the order specified by the
+            require property when "latest" is specify for the version property
+    git: ee5b3cc4625b8d4ae06550fd3a7fd6363efb102e
+    gerrit: https://gerrit.ericsson.se/#/c/1572388/
+
+test_03_p_require_pkg_install_order_specific_vrsn
+         merged into test_13 
+    Description:
+            To ensure packages are installed in the order specified by the
+            require property when a specific version is declared.
+    git: ee5b3cc4625b8d4ae06550fd3a7fd6363efb102e
+    gerrit: https://gerrit.ericsson.se/#/c/1572388/
+
+test_11_p_require_pkg_replaces         
+         merged into test_13 
+    Description:
+            To ensure packages are installed in the order specified by the
+            require property when a specific version is declared, and one
+            package is specified to replace an installed, but not modelled
+            package.
+    git: ee5b3cc4625b8d4ae06550fd3a7fd6363efb102e
+    gerrit: https://gerrit.ericsson.se/#/c/1572388/
+
+Story 139675
+-----------
+
+testset_story139675 test_01_p_upgrade_kernel_version
+    Description:
+            Test that ensures when we upgrade the OS kernel version the old
+            vxdmp_initrd files are removed.
+    TMS-ID:
+    REASON OBSOLETED: The LITP task has ben removed. An existing task performs
+            the removal of the old vxdmp_initrd files.
+            A new KGB will be written to test VRTSvxvm upgrade which includes
+            removal of these olf VxDMP_initrd files. See TORF-654258.
+    git: d2e3efac1ee609a4a2fb28cc9433807fbf0ade50
+    gerrit: https://gerrit.ericsson.se/#/c/15203750/

@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="kgb-suite">
+	<test name="LITPpackageKGBSuite" preserve-order="true">
+		<classes>
+			<class name="com.ericsson.nms.litp.taf.test.cases.LITPpackageTestRunner">
+			  <methods>
+			    <include name="upgradeERIClitppackageRPM"/>
+			    <include name="runERIClitppackageTests"/>
+			    <include name="parseNosetestsReports"/>
+			  </methods> 
+			</class>
+		</classes>
+	</test>
+</suite>
